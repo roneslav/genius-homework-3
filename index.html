@@ -201,7 +201,7 @@
                 </article>
               </li>
             </ul>
-            <button class="carousel-button" type="button">
+            <button class="carousel-button next" type="button">
               <svg height="16" width="16">
                 <use href="./images/social-icons.svg#icon-arrow"></use>
               </svg>
@@ -225,10 +225,61 @@
               referrerpolicy="no-referrer-when-downgrade"
             ></iframe>
             <div class="address-form">
-              <h3>
-                Запишіться <span>безкоштовно</span> та отримайте подарунок
+              <h3 class="address-text">
+                Запишіться <span class="blue-text">безкоштовно</span> та
+                отримайте подарунок
               </h3>
-              <!--form-->
+              <form name="contact-form" autocomplete="off">
+                <div class="form-field">
+                  <label class="form-label visually-hidden" for="user-name"
+                    >Ваше ім'я та прізвище</label
+                  >
+                  <input
+                    class="form-input"
+                    type="text"
+                    id="user-name"
+                    name="user-name"
+                    placeholder="Ваше ім'я та прізвище"
+                  />
+                </div>
+
+                <div class="form-field">
+                  <label class="form-label visually-hidden" for="user-tel"
+                    >Ваш номер телефону</label
+                  >
+                  <input
+                    class="form-input"
+                    type="tel"
+                    id="user-tel"
+                    name="user-tel"
+                    placeholder="Ваш номер телефону"
+                  />
+                </div>
+
+                <div class="form-field">
+                  <label class="form-label visually-hidden" for="user-email"
+                    >Ваша електронна пошта</label
+                  >
+                  <input
+                    class="form-input"
+                    type="email"
+                    id="user-email"
+                    name="user-email"
+                    placeholder="Ваша електронна пошта"
+                  />
+                </div>
+
+                <button class="form-button button-order" type="submit">
+                  Записатись безкоштовно
+                </button>
+
+                <p class="form-terms">
+                  Натискаючи на кнопку я погоджуюсь
+                  <a class="form-terms-link" href="#"
+                    >з політикою конфіденційності</a
+                  >
+                </p>
+              </form>
             </div>
           </div>
         </div>
@@ -312,9 +363,69 @@
       </div>
     </footer>
 
-    <div class="backdrop">
+    <div class="backdrop is-hidden">
       <div class="modal">
         <button class="modal-btn-close" type="button">Close</button>
+        <div class="modal-container">
+          <h2 class="modal-title">Замовити дзвінок</h2>
+          <div class="form-container">
+            <p class="modal-text">
+              Запишіться <span class="blue-text">безкоштовно</span> та отримайте
+              подарунок
+            </p>
+            <form name="modal-form" autocomplete="off" novalidate>
+              <div class="form-field">
+                <label class="form-label visually-hidden" for="user-name"
+                  >Ваше ім'я та прізвище</label
+                >
+                <input
+                  class="form-input"
+                  type="text"
+                  id="user-name"
+                  name="user-name"
+                  placeholder="Ваше ім'я та прізвище"
+                />
+              </div>
+
+              <div class="form-field">
+                <label class="form-label visually-hidden" for="user-tel"
+                  >Ваш номер телефону</label
+                >
+                <input
+                  class="form-input"
+                  type="tel"
+                  id="user-tel"
+                  name="user-tel"
+                  placeholder="Ваш номер телефону"
+                />
+              </div>
+
+              <div class="form-field">
+                <label class="form-label visually-hidden" for="user-email"
+                  >Ваша електронна пошта</label
+                >
+                <input
+                  class="form-input"
+                  type="email"
+                  id="user-email"
+                  name="user-email"
+                  placeholder="Ваша електронна пошта"
+                />
+              </div>
+
+              <button class="form-button button-order" type="submit">
+                Записатись безкоштовно
+              </button>
+
+              <p class="form-terms">
+                Натискаючи на кнопку я погоджуюсь
+                <a class="form-terms-link" href="#"
+                  >з політикою конфіденційності</a
+                >
+              </p>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
     <script src="./js/module.js"></script>

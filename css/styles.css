@@ -101,6 +101,15 @@ ul li{
     list-style: none;
 }
 
+.visually-hidden{
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
 .section {
     padding: 48px 0;
 }
@@ -114,9 +123,17 @@ ul li{
 
 /*Header*/
 .header-container{
+    position: absolute;
+    width: 100%;
+    top: 0;        
+    left: 0;
+    /* padding-top: 32px; */
+    padding: 16px 100px;
     display: flex;
     align-items: center;
     gap: 40px;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.25);
 }
 
 .header-nav{
@@ -139,6 +156,7 @@ ul li{
     font-size: 18px;
     font-family: 'Play', sans-serif;
     text-decoration: none;
+    transition: color 0.3s;
 }
 
 .header-link:hover{
@@ -374,11 +392,15 @@ ul li{
 .procedure-card{
     height: 456px;
     /* max-width: 344px; */
-    /* border: 1px solid var(--primary-text-color); */
     background: linear-gradient(180.05deg, 
     rgba(1, 28, 68, 0) 48.53%, 
     rgba(1, 28, 68, 0.725825) 84.61%, 
     var(--primary-text-color) 101.39%);
+    transition: transform 0.3s;
+}
+
+.procedure-card:hover{
+    transform: scale(1.05);
 }
 
 .procedures-item{
@@ -417,6 +439,10 @@ ul li{
     fill: var(--brand-white-color);
 }
 
+.carousel-button.next{
+    transform: rotate(180deg);
+}
+
 /*Contact section*/
 .address-container{
     display: flex;
@@ -425,6 +451,26 @@ ul li{
 
 .address{
     padding-bottom: 96px;
+}
+
+.address-form {
+    padding: 48px 74px 32px;
+    width: 100%;
+    max-width: 423px;
+    border-radius: 32px;
+    background-color: var(--primary-text-color);
+    background-image: url('./../images/background.png');
+    background-repeat: no-repeat;
+}
+
+.address-text {
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--brand-white-color);
+}
+
+.blue-text {
+    color: var(--brand-dark-color);
 }
 
 .address-map{
@@ -517,28 +563,126 @@ ul li{
     right: 0;
     bottom: 0;
     left: 0;
+    padding: 20px 0;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: var(--modal-grey-color);   
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }
 
 .modal{
     position: relative;
-    width: 723px;
-    height: 681px;
-    border-radius: 48px;
+    width: 100%;
+    max-width: 723px;
+    height: 100%;
+    max-height: 681px;
+    padding: 42px 144px;
+    color: var(--brand-white-color);
+    border-radius: 48px; 
     background-color: var(--primary-text-color);
-}
-
-.backdrop.is-hidden{
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
+    overflow-y: auto;
+    background-image: url('./../images/background.png');
 }
 
 .modal-btn-close{
     position: absolute;
     top: 42px;
     right: 42px;
+}
+
+.modal-container{
+    max-width: 435px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.modal-title{
+    font-weight: 700;
+    font-size: 64px;
+}
+
+.form-container{
+    max-width: 310px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.modal-text {
+    margin: 0 auto;
+    max-width: 310px;
+    font-weight: 600;
+    font-size: 22px;
+    text-align: center;
+    align-items: center;
+    
+}
+
+/* Form */
+
+.form-field{
+    margin-bottom: 24px;
+}
+
+.form-label {
+    display: block;
+    font-size: 13px;
+    line-height: 1.17;
+}
+
+.form-input {
+    padding: 18px 33px;
+    width: 100%;
+    border: 2px solid var(--grey-color-dark);
+    border-radius: 32px;
+    background-color: transparent;
+    color: var(--brand-white-color);
+}
+
+.form-input:focus{
+    background-color: var(--grey-color-dark);
+    outline: none;
+}
+
+.form-input::placeholder{
+    color: var(--brand-white-color);
+    font-size: 13px;
+    line-height: 1.17;
+}
+
+.form-button {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 8px;
+}
+
+.form-button.button-order {
+    max-width: 281px;
+    font-family: 'Roboto';
+}
+
+.form-terms {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 210px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--grey-color-dark);
+}
+
+.form-terms-link {
+    color: var(--grey-color-dark);
+    text-underline-offset: 1px;
 }

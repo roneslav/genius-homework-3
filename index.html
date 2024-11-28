@@ -240,6 +240,10 @@
                     id="user-name"
                     name="user-name"
                     placeholder="Ваше ім'я та прізвище"
+                    minlength="2"
+                    maxlength="20"
+                    pattern="^[А-ЯҐа-яґ]+\s[А-ЯҐа-яґ]+$"
+                    required
                   />
                 </div>
 
@@ -253,6 +257,8 @@
                     id="user-tel"
                     name="user-tel"
                     placeholder="Ваш номер телефону"
+                    pattern="^\+380[0-9]{9}"
+                    required
                   />
                 </div>
 
@@ -266,6 +272,7 @@
                     id="user-email"
                     name="user-email"
                     placeholder="Ваша електронна пошта"
+                    required
                   />
                 </div>
 
@@ -373,7 +380,7 @@
               Запишіться <span class="blue-text">безкоштовно</span> та отримайте
               подарунок
             </p>
-            <form name="modal-form" autocomplete="off" novalidate>
+            <form name="modal-form" autocomplete="off">
               <div class="form-field">
                 <label class="form-label visually-hidden" for="user-name"
                   >Ваше ім'я та прізвище</label
@@ -384,6 +391,10 @@
                   id="user-name"
                   name="user-name"
                   placeholder="Ваше ім'я та прізвище"
+                  minlength="2"
+                  maxlength="20"
+                  pattern="^[А-ЯҐа-яґ]+\s[А-ЯҐа-яґ]+$"
+                  required
                 />
               </div>
 
@@ -397,6 +408,8 @@
                   id="user-tel"
                   name="user-tel"
                   placeholder="Ваш номер телефону"
+                  pattern="^\+380[0-9]{9}"
+                  required
                 />
               </div>
 
@@ -410,6 +423,7 @@
                   id="user-email"
                   name="user-email"
                   placeholder="Ваша електронна пошта"
+                  required
                 />
               </div>
 
